@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="与你分享WEB知识">
+    <meta name="author" content="Loweringye">
+    <link rel="icon" href="../favicon.ico">
+
+    <title>Loweringye-<%=title%></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/blog.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <script src="/javascripts/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+	<%- include header %>
+	<%- body %>
+	<%- include footer %>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+    <script src="http:////cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/javascripts/ie10-viewport-bug-workaround.js"></script>
+    <script src="/javascripts/jquery-scrollUp-min.js"></script>
+  </body>
+  <script type="text/javascript">
+	$(function (){
+	    $.scrollUp({
+	        animation: 'fade',
+	        activeOverlay: '#00FFFF',
+	        scrollImg: {
+	            active: true,
+	            type: 'background',
+	        },
+	    	activeOverlay: false,
+	    });
+        $('[data-toggle="offcanvas"]').click(function () {
+	    	$('.row-offcanvas').toggleClass('active')
+	    });
+	    $('[data-toggle="collapse"]').click(function () {
+	    	$('.offsearchform').toggleClass('active')
+	    });
+	    $("body").css("min-height",$(".sidebar-offcanvas").height());
+	})
+  </script>
+</html>

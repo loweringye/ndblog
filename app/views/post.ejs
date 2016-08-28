@@ -1,0 +1,47 @@
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-sm-8 col-xs-12 blog-main">
+        	<p class="pull-right visible-xs">
+            	<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">右侧导航</button>
+            </p>
+		  <% if (posts) { %>
+		  	  <% posts.forEach(function(post, index) { %>
+	          <div class="blog-post">
+	            <h2 class="blog-post-title"><%=post.title%></h2>
+	            <p class="blog-post-meta"><%=post.date%><a href="#">loweringye</a></p>
+	            <%-post.content%>
+	            <div><a class="btn btn-default pull-right" href="post_detail.html?id=<%=post.id%>" role="button">查看更多 »</a></div>
+	          </div><!-- /.blog-post -->
+	          <% }) %>
+		  <% } %>
+		  <div class="clearfix"></div>
+		  <%- include page %>
+
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar sidebar-offcanvas">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>热门标签</h4>
+            <p>
+            	<% if (tags) { %>
+			  	  <% tags.forEach(function(tag, index) { %>
+		          <a href="post.html?type=tag&value=<%=tag%>"><%=tag%></a>
+		          <% }) %>
+			  <% } %>
+            </p>
+          </div>
+          <div class="sidebar-module">
+            <h4>热门文章</h4>
+            <ol class="list-unstyled">
+	         <% if (hits) { %>
+			  	  <% hits.forEach(function(hit, index) { %>
+		          <li><a href="post_detail.html?id=<%=hit.id%>"><%=hit.title%></a></li>
+		          <% }) %>
+			  <% } %>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->

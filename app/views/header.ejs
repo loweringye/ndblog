@@ -1,0 +1,30 @@
+    <div class="blog-masthead navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav class="blog-nav navbar-nav">
+          <a class="blog-nav-item" href="/">首页</a>
+          <a class="blog-nav-item <%=nav=='post.html'||nav=='post_detail.html'?'active':'';%>" href="post.html?type=list">文章</a>
+          <a class="blog-nav-item <%=nav=='about.html'?'active':'';%>" href="about.html">关于我</a>
+          <a class="blog-nav-item <%=nav=='contact.html'?'active':'';%>"" href="contact.html">联系我</a>
+        </nav>
+        <form class="navbar-form navbar-right hidden-xs" role="search" action="post.html" method="get">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="请输入关键字" name="value" value="<%=tag%>">
+              <input type="hidden" class="form-control" name="type" value="tag">
+            </div>
+            <button type="submit" class="btn btn-default">提交</button>
+        </form>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      </div>
+    </div>
+    <form class="form-inline offsearchform" role="search" action="post.html" method="get">
+	  <div class="form-group col-xs-9">
+          <input type="text" class="form-control" placeholder="请输入关键字" name="value" value="<%=tag%>">
+          <input type="hidden" class="form-control" name="type" value="tag">
+	  </div>
+	  <button type="submit" class="btn btn-primary">提交</button>
+	</form>
